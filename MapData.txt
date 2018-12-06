@@ -1,0 +1,558 @@
+84
+Albany-NY       42.75   73.80
+Albert-Lea-MN   43.68   93.37
+Albuquerque     35.05  106.60
+Amarillo        35.23  101.70
+Atlanta         33.65   84.42
+Baltimore       39.18   76.67
+Bangor          44.80   68.82
+Barstow-CA      34.90  117.02
+Billings        45.80  108.53
+Binghamton	42.10   75.92
+Birmingham      33.57   86.75
+Boise           43.57  116.22
+Boston          42.37   71.03
+Buffalo-NY      42.93   78.73
+Buffalo-WY      44.35  106.70
+Burlington-VT	44.48   73.22
+Butte-MT        45.95  112.50
+Charleston-SC   32.77   79.93
+Charleston-WV   38.37   81.60
+Charlotte       35.22   80.93
+Chattanooga     35.03   85.20
+Cheyenne        41.15  104.82
+Chicago         41.90   87.65
+Cincinnati      39.10   84.43
+Cleveland       41.42   81.87
+Columbia-SC     33.95   81.12
+Columbus-OH     40.00   82.88
+Dallas          32.73   96.97
+Denver          39.75  104.87
+Des-Moines      41.53   93.65
+Detroit         42.42   83.02
+El-Paso         31.80  106.40
+Fargo           46.90   96.80
+Flagstaff       35.13  111.67
+Gainesville     29.68   82.27
+Harrisburg      40.22   76.85
+Houston         29.97   95.35
+Indianapolis    39.73   86.27
+Jackson-MS      32.32   90.08
+Julesburg-CO    40.98  102.26
+Kansas-City     39.12   94.60
+Knoxville       35.82   83.98
+Las-Vegas       36.08  115.17
+Lexington       38.05   85.00
+Little-Rock     35.22   92.38
+Los-Angeles     33.93  118.40
+Louisville      38.18   85.73
+Lubbock         33.65  101.82
+Macon		32.84   83.65
+Madison         43.13   89.33
+Memphis         35.35   89.87
+Miami		25.46	80.12
+Minneapolis     44.88   93.22
+Missoula        46.92  114.08
+Mobile          30.68   88.25
+Montgomery      32.30   86.40
+Nashville       36.12   86.68
+New-Orleans     29.98   90.25
+New-York        40.77   73.98
+Norfolk-VA	36.54   76.12
+Oklahoma-City   35.40   97.60
+Omaha           41.30   95.90
+Orlando		28.55 	81.33
+Philadelphia    39.88   75.25
+Phoenix         33.43  112.02
+Pittsburgh      40.50   80.22
+Portland        45.60  122.60
+Raleigh         35.87   78.78
+Reno		39.52  119.81
+Richmond        37.50   77.33
+Roanoke         37.32   79.97
+Sacramento      38.70  121.60
+Salt-Lake-City  40.78  111.97
+San-Antonio     29.33   98.47
+San-Francisco   37.75  122.68
+San-Jose        37.37  121.92
+Savannah	32.07   81.10
+Seattle         47.45  122.30
+Sioux-Falls     43.58   96.73
+St-Louis        38.75   90.37
+Syracuse	43.04	76.13
+Tampa           27.97   82.53
+Toledo          41.60   83.80
+Washington-DC   38.85   77.04
+
+Albany-NY 5
+  Binghamton	135 I-88
+  Boston        166 I-90
+  Burlington-VT 190 I-87
+  New-York      159 I-87
+  Syracuse      144 I-90
+
+Albert-Lea-MN 4
+  Des-Moines    148 I-35
+  Madison       267 I-90
+  Minneapolis    98 I-35
+  Sioux-Falls   176 I-90
+
+Albuquerque 4
+  Amarillo      287 I-40
+  Denver        445 I-25
+  El-Paso       189 I-25
+  Flagstaff     328 I-40
+
+Amarillo 3
+  Albuquerque   287 I-40
+  Oklahoma-City 259 I-40
+  Lubbock       118 I-27
+
+Atlanta 6
+  Birmingham    148 I-20
+  Chattanooga   108 I-75
+  Charlotte     240 I-85
+  Columbia-SC   219 I-20
+  Macon		 86 I-75
+  Montgomery    167 I-85
+
+Baltimore 3
+  Harrisburg     87 I-83
+  Philadelphia  104 I-95
+  Washington-DC  35 I-95
+
+Bangor 2
+  Boston        240 I-95
+  Burlington-VT	288 US-2
+
+Barstow-CA 3
+  Flagstaff     354 I-40
+  Las-Vegas     155 I-15
+  Los-Angeles   120 I-15
+
+Billings 3
+  Buffalo-WY    175 I-25
+  Fargo         608 I-94
+  Butte-MT      223 I-90
+
+Binghamton 4
+  Syracuse	 73 I-81
+  Albany-NY	135 I-88
+  Buffalo-NY	202 I-86/NY-17
+  Harrisburg	180 I-81
+
+Birmingham 6
+  Atlanta       148 I-20
+  Chattanooga   143 I-59
+  Jackson-MS    234 I-20
+  Memphis       247 I-78
+  Montgomery     92 I-65
+  Nashville     222 I-65
+
+Boise 2
+  Salt-Lake-City 348 I-84
+  Portland       428 I-84
+
+Boston 3
+  Bangor	240 I-95
+  New-York      182 I-95
+  Albany-NY     166 I-90
+
+Buffalo-NY 3
+  Binghamton	202 I-86/NY-17
+  Cleveland     191 I-90
+  Syracuse 	150 I-90
+
+Buffalo-WY 3
+  Cheyenne      293 I-25
+  Sioux-Falls   560 I-90
+  Billings      175 I-25
+
+Burlington-VT 2
+  Bangor	288 US-2
+  Albany-NY     190 I-87
+
+Butte-MT 3
+  Missoula       119 I-90
+  Salt-Lake-City 413 I-15
+  Billings       223 I-90
+
+Charleston-SC 1
+  Columbia-SC   113 I-26
+
+Charleston-WV 4
+  Cleveland     250 I-77
+  Lexington     177 I-64
+  Roanoke       180 WVA-Tnpk
+  Pittsburgh    229 I-79
+
+Charlotte 4
+  Columbia-SC    91 I-77
+  Roanoke       195 I-77
+  Raleigh       168 I-85
+  Atlanta       240 I-85
+
+Chattanooga 4
+  Knoxville     114 I-75
+  Nashville     128 I-24
+  Birmingham    143 I-59
+  Atlanta       108 I-75
+
+Cheyenne 4
+  Denver        100 I-25
+  Julesburg-CO  145 I-80
+ Salt-Lake-City 434 I-80
+ Buffalo-WY     293 I-25
+
+Chicago 6
+  Detroit       278 I-94
+  Indianapolis  185 I-65
+  Des-Moines    345 I-80
+  Madison       145 I-90
+  St-Louis      301 I-55
+  Toledo        244 I-80/90
+
+Cincinnati 5
+  Columbus-OH   111 I-71
+  Indianapolis  112 I-74
+  Lexington      82 I-75
+  Louisville    103 I-71
+  Toledo        210 I-75
+
+Cleveland 6
+  Buffalo-NY    191 I-90
+  Charleston-WV 250 I-77
+  Toledo        119 I-80/90
+  Columbus-OH   141 I-41
+  New-York      492 I-80
+  Pittsburgh    156 I-76
+
+Columbia-SC 4
+  Atlanta       219 I-20
+  Charleston-SC 113 I-26
+  Charlotte      91 I-20
+  Raleigh       228 I-95/I-20
+
+Columbus-OH 4
+  Indianapolis  178 I-70
+  Pittsburgh    187 I-70
+  Cleveland     141 I-41
+  Cincinnati    111 I-71
+
+Dallas 6
+  Lubbock       349 I-20/US-84
+  Houston       244 I-45
+  Jackson-MS    406 I-20
+  Little-Rock   320 I-30
+  Oklahoma-City 208 I-35
+  San-Antonio   278 I-35
+
+Denver 4
+  Albuquerque   445 I-25
+  Cheyenne      100 I-25
+  Kansas-City   612 I-70
+  Julesburg-CO  190 I-76
+
+Des-Moines 4
+  Albert-Lea-MN 148 I-35
+  Chicago       345 I-80
+  Kansas-City   194 I-35
+  Omaha         135 I-80
+
+Detroit 2
+  Chicago       278 I-94
+  Toledo         62 I-75
+
+El-Paso 4
+  Lubbock       376 US-82
+  Phoenix       437 I-10
+  San-Antonio   557 I-10
+  Albuquerque   189 I-25
+
+Fargo 3
+  Billings      608 I-94
+  Sioux-Falls   144 I-29
+  Minneapolis   240 I-94
+
+Flagstaff 3
+  Barstow-CA    354 I-40
+  Albuquerque   328 I-40
+  Phoenix       136 I-17
+
+Gainesville 3
+  Macon	        255 I-75
+  Orlando       113 I-75/FL-Tpke
+  Tampa         130 I-75
+
+Harrisburg 6
+  Baltimore      87 I-83
+  Binghamton	180 I-81
+  New-York      198 I-78
+  Pittsburgh    204 I-76
+  Philadelphia  114 I-76
+  Roanoke       289 I-81
+
+Houston 3
+  Dallas        244 I-45
+  New-Orleans   352 I-10
+  San-Antonio   197 I-10
+
+Indianapolis  5
+  Chicago       185 I-65
+  Cincinnati    112 I-74
+  Columbus-OH   178 I-70
+  Louisville    114 I-65
+  St-Louis      246 I-65
+
+Jackson-MS 4
+  Birmingham    234 I-20
+  New-Orleans   180 I-55
+  Dallas        406 I-20
+  Memphis       213 I-55
+
+Julesburg-CO 3
+  Cheyenne      145 I-80
+  Denver        190 I-76
+  Omaha         365 I-80
+
+Kansas-City 5
+  Denver        612 I-70
+  Des-Moines 	194 I-35
+  St-Louis    	253 I-70
+  Oklahoma-City 349 I-35
+  Omaha       	197 I-29
+
+Knoxville 4
+  Chattanooga   114 I-75
+  Nashville     178 I-40
+  Roanoke       257 I-81
+  Lexington     173 I-75
+
+Las-Vegas 2
+  Barstow-CA     155 I-15
+  Salt-Lake-City 417 I-15
+
+
+Lexington 4
+  Charleston-WV 177 I-64
+  Cincinnati     82 I-75
+  Knoxville     173 I-75
+  Louisville     79 I-64
+
+Little-Rock 3
+  Dallas        320 I-30
+  Memphis     	137 I-40
+  Oklahoma-City 340 I-40
+
+Los-Angeles 3
+  Barstow-CA    120 I-15
+  San-Jose      320 I-5
+  Phoenix       367 I-10
+
+Louisville 5
+  Cincinnati    103 I-71
+  Indianapolis  114 I-65
+  Lexington      79 I-64
+  Nashville     176 I-65
+  St-Louis      258 I-64
+
+Lubbock 3
+  Amarillo      118 I-27
+  El-Paso       376 US-82
+  Dallas        349 I-20/US-84
+
+Macon 3
+  Atlanta        86 I-75
+  Gainesville   255 I-75
+  Savannah      166 I-16
+
+Madison 3
+  Albert-Lea-MN 267 I-90
+  Chicago       145 I-90
+  Minneapolis   301 I-94
+
+Memphis 5
+  Birmingham    247 I-78
+  Jackson-MS    213 I-55
+  Little-Rock   137 I-40
+  Nashville     198 I-40
+  St-Louis      319 I-55
+
+Miami 2
+  Orlando       233 FL-Tpke
+  Tampa		279 I-75
+
+Minneapolis 3
+  Madison       301 I-94
+  Fargo         240 I-94
+  Albert-Lea-MN  98 I-35
+
+Missoula 2
+  Butte-MT      119 I-90
+  Seattle       482 I-90
+
+Mobile 2
+  Montgomery    170 I-65
+  New-Orleans   148 I-10
+
+Montgomery 3
+  Mobile        170 I-65
+  Birmingham     92 I-65
+  Atlanta       167 I-85
+
+Nashville 5
+  Memphis       198 I-40
+  Louisville    176 I-65
+  Knoxville     178 I-40
+  Chattanooga   128 I-24
+  Birmingham    222 I-65
+
+New-Orleans 3
+  Mobile        148 I-10
+  Jackson-MS    180 I-55
+  Houston     	352 I-10
+
+New-York 5
+  Philadelphia  109 I-95
+  Harrisburg    198 I-78
+  Cleveland     492 I-80
+  Boston        182 I-95
+  Albany-NY     159 I-87
+
+Norfolk-VA 1
+  Richmond       93 I-64
+
+Oklahoma-City 5
+  St-Louis      496 I-44
+  Little-Rock 	340 I-40
+  Kansas-City 	349 I-35
+  Dallas    	208 I-35
+  Amarillo 	259 I-40
+
+Omaha 4
+  Sioux-Falls   182 I-29
+  Kansas-City   197 I-29
+  Julesburg-CO  365 I-80
+  Des-Moines    135 I-80
+
+Orlando 4
+  Miami         233 FL-Tpke
+  Savannah      281 I-95/I-4
+  Tampa		 83  I-4
+  Gainesville   113 I-75/FL-Tpke
+
+
+Philadelphia 3
+  New-York      109 I-95
+  Harrisburg 	114 I-76
+  Baltimore    	104 I-95
+
+Phoenix 3
+  Los-Angeles   367 I-10
+  Flagstaff     136 I-17
+  El-Paso       437 I-10
+
+Pittsburgh 4
+  Harrisburg    204 I-76
+  Columbus-OH   187 I-70
+  Cleveland     156 I-76
+  Charleston-WV 229 I-79
+
+Portland 3
+  Seattle       174 I-5
+  Sacramento    642 I-5
+  Boise         428 I-84
+
+Raleigh 5
+  Richmond      148 I-95
+  Roanoke       172 I-40
+  Columbia-SC   228 I-95/I-20
+  Charlotte     168 I-85
+  Savannah      321 I-95
+
+Reno 2
+  Sacramento	 132 I-80
+  Salt-Lake-City 518 I-80
+
+Richmond 3
+  Washington-DC 105 I-95
+  Raleigh       148 I-95
+  Norfolk-VA     93 I-64
+
+Roanoke 5
+  Raleigh       172 I-40
+  Knoxville     257 I-81
+  Harrisburg    289 I-81
+  Charlotte     195 I-77
+  Charleston-WV 180 WVA-Tnpk
+
+
+Sacramento 4
+  Reno	         132 I-80
+  San-Jose        60 I-5
+  San-Francisco   91 I-80
+  Portland       642 I-5
+
+Salt-Lake-City 5
+  Boise          348 I-84
+  Las-Vegas 	 417 I-15
+  Cheyenne 	 434 I-80
+  Butte-MT 	 413 I-15
+  Reno		 518 I-80
+
+San-Antonio 3
+  Houston	 197 I-10
+  El-Paso      	 557 I-10
+  Dallas         278 I-35
+
+San-Francisco 2
+  San-Jose        40 I-580
+  Sacramento 	  91 I-80
+
+San-Jose 3
+  San-Francisco   40 I-580
+  Sacramento      60 I-5
+  Los-Angeles    320 I-5
+
+Savannah 3
+  Macon          166 I-16
+  Raleigh 	 321 I-95
+  Orlando 	 281 I-95/I-4
+
+Seattle 2
+  Portland       174 I-5
+  Missoula       482 I-90
+
+Sioux-Falls 4
+  Albert-Lea-MN  176 I-90
+  Omaha          182 I-29
+  Fargo          144 I-29
+  Buffalo-WY  	 560 I-90
+
+St-Louis 6
+  Oklahoma-City  496 I-44
+  Memphis        319 I-55
+  Louisville     258 I-64
+  Kansas-City    253 I-70
+  Indianapolis   246 I-65
+  Chicago        301 I-55
+
+Syracuse 3
+  Buffalo-NY     150 I-90
+  Binghamton      73 I-81
+  Albany-NY      144 I-90
+
+Tampa 3
+  Orlando	  83  I-4
+  Gainesville    130 I-75
+  Miami		 279 I-75
+
+Toledo 4
+  Detroit         62 I-75
+  Cleveland      119 I-80/90
+  Cincinnati     210 I-75
+  Chicago        244 I-80/90
+
+Washington-DC  2
+  Richmond       105 I-95
+  Baltimore       35 I-95

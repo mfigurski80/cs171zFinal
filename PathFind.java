@@ -11,11 +11,11 @@ public class PathFind {
    */
   private static class City {
     public boolean isOpen = true;
-    public String name;
+    public String name = new String();
     public int x,y;
     public int cost;
     public City parent;
-    public ArrayList<Connection> connections;
+    public ArrayList connections = new ArrayList();
 
     public City (String _name, int _x, int _y) {
       name = _name;
@@ -28,6 +28,13 @@ public class PathFind {
     }
   }
 
+  /**
+   * Class to hold connections between individual cities
+   * Constructor needs:
+   * @param name
+   * @param city to begin at
+   * @param city to end at
+   */
   private static class Connection {
     public String name;
     public City[] connects;
@@ -43,8 +50,11 @@ public class PathFind {
    * @param args
    */
   public static void main(String[] args) {
-    System.out.println("Edited from IntelliJ");
     City n = new City("Philly",1,1);
     Connection c = new Connection("Route 66", n, n);
+    System.out.println(args);
+    for (String arg : args) {
+      System.out.println(arg);
+    }
   }
 }
