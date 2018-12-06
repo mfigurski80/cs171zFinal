@@ -1,18 +1,24 @@
+import java.util.ArrayList;
+
 public class PathFind {
 
   /**
    * Class to hold individual point (city) that can be traveled through
    * Constructor needs:
-   * @param x-position
-   * @param y-position
+   * @param name
+   * @param position-x
+   * @param position-y
    */
-  private static class Node {
+  private static class City {
     public boolean isOpen = true;
+    public String name;
     public int x,y;
     public int cost;
-    public Node parent;
+    public City parent;
+    public ArrayList<Connection> connections;
 
-    public Node (int _x, int _y) {
+    public City (String _name, int _x, int _y) {
+      name = _name;
       x = _x;
       y = _y;
     }
@@ -22,6 +28,15 @@ public class PathFind {
     }
   }
 
+  private static class Connection {
+    public String name;
+    public City[] connects;
+
+    public Connection (String _name, City a, City b) {
+      name = _name;
+      connects = new City[]{a,b};
+    }
+  }
 
   /**
    * MAIN CLASS BEGINS HERE
@@ -29,6 +44,7 @@ public class PathFind {
    */
   public static void main(String[] args) {
     System.out.println("Edited from IntelliJ");
-    Node n = new Node(1,1);
+    City n = new City("Philly",1,1);
+    Connection c = new Connection("Route 66", n, n);
   }
 }
