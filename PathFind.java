@@ -12,9 +12,9 @@ public class PathFind {
   private static class City {
     public boolean isOpen = true;
     public String name = new String();
-    public int x,y;
-    public int cost;
-    public City parent;
+    public static int x,y;
+    public static int cost;
+    public Connection parent;
     public ArrayList connections = new ArrayList();
 
     public City (String _name, int _x, int _y) {
@@ -23,8 +23,14 @@ public class PathFind {
       y = _y;
     }
 
-    public static double getDistanceFromPoint(int targetX, int targetY) {
-      return(4.3); // TODO: write getDistanceFromPoint method
+    public static double distanceFrom(int targetX, int targetY) {
+      int dX = x - targetX;
+      int dY = y - targetY;
+      return (Math.sqrt(dX*dX + dY*dY));
+    }
+
+    public static double distanceFrom(City target) {
+      return (distanceFrom(target.x, target.y));
     }
   }
 
@@ -56,5 +62,8 @@ public class PathFind {
     for (String arg : args) {
       System.out.println(arg);
     }
+
+
+    System.out.println(n.distanceFrom(2,2));
   }
 }
