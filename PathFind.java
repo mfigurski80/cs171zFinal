@@ -1,4 +1,6 @@
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class PathFind {
 
@@ -12,25 +14,28 @@ public class PathFind {
   private static class City {
     public boolean isOpen = true;
     public String name = new String();
-    public static int x,y;
-    public static int cost;
+    public double x,y;
+    public double cost;
     public Connection parent;
     public ArrayList connections = new ArrayList();
 
-    public City (String _name, int _x, int _y) {
+    public City (String _name, double _x, double _y) {
       name = _name;
       x = _x;
       y = _y;
     }
 
-    public static double distanceFrom(int targetX, int targetY) {
-      int dX = x - targetX;
-      int dY = y - targetY;
+    public double distanceFrom(double targetX, double targetY) {
+      double dX = x - targetX;
+      double dY = y - targetY;
       return (Math.sqrt(dX*dX + dY*dY));
     }
-
-    public static double distanceFrom(City target) {
+    public double distanceFrom(City target) {
       return (distanceFrom(target.x, target.y));
+    }
+
+    public String toString() {
+      return name + " -- x:" + x + "; y:" + y;
     }
   }
 
@@ -43,11 +48,12 @@ public class PathFind {
    */
   private static class Connection {
     public String name;
-    public City[] connects;
+    public City[] connects = new City[2];
 
     public Connection (String _name, City a, City b) {
       name = _name;
-      connects = new City[]{a,b};
+      connects[0] = a;
+      connects[1] = b;
     }
   }
 
@@ -56,14 +62,33 @@ public class PathFind {
    * @param args
    */
   public static void main(String[] args) {
-    City n = new City("Philly",1,1);
-    Connection c = new Connection("Route 66", n, n);
-    System.out.println(args);
-    for (String arg : args) {
-      System.out.println(arg);
+    System.out.println("[Running...]");
+
+    Scanner sc;
+    try {
+      sc = new Scanner(new File(args[0]));
+    } catch(FileNotFoundException err) { // woot, file doesn't exist.
+      System.out.println("[Couldn't find " + args[0] + ". You got some serious problems rn]");
+      sc = new Scanner(System.in);
     }
 
+    int citiesCount = sc.nextInt(); // get amount of cities
+    sc.nextLine(); // clear rest of that line (it's empty)
 
-    System.out.println(n.distanceFrom(2,2));
+    // TODO: GET CITY DATA
+    String[] cityNames = new String[citiesCount]; // holds all the NAMES of the cities
+    City[] cities = new City[citiesCount];        // hold all the city OBJECTS
+    for (int i = 0; i < citiesCount; i++) { // divide string into these ^^
+      String[] data = sc.nextLine().split("\\s+");
+      cityNames[i] = data[0];
+      cities[i] = new City(data[0], Double.parseDouble(data[1]), Double.parseDouble(data[2]));
+    }
+
+    for (City i : cities) {
+      System.out.println(i.toString());
+    }
+
+    // TODO: GET CONNECTION DATA
+
   }
 }
