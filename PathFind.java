@@ -28,10 +28,14 @@ public class PathFind {
     public double distanceFrom(double targetX, double targetY) {
       double dX = x - targetX;
       double dY = y - targetY;
-      return (Math.sqrt(dX*dX + dY*dY));
+      return 2*adjustMetersForCurvature(100*(Math.sqrt(dX*dX + dY*dY)));
     }
     public double distanceFrom(City target) {
       return (distanceFrom(target.x, target.y));
+    }
+    private double adjustMetersForCurvature(double meters) {
+      // TODO: wtf do I even do here
+      return meters;
     }
 
     public void addConnection(Connection con) {
@@ -39,7 +43,7 @@ public class PathFind {
     }
 
     public String toString() {
-      return name + " -- x:" + x + "; y:" + y;
+      return java.lang.String.format("%s -- x:%s; y:%s; cost:%s", name, x, y, cost);
     }
   }
 
@@ -64,7 +68,7 @@ public class PathFind {
     }
 
     public String toString() {
-      return java.lang.String.format("%s, from %s to %s", name, connects[0].name, connects[1].name);
+      return java.lang.String.format("%s, from %s to %s, cost: %s", name, connects[0].name, connects[1].name, cost);
     }
   }
 
@@ -105,15 +109,16 @@ public class PathFind {
       String[] data = line.split("\\s+"); // split the data (for city)
       for (int j = 0; j < Integer.parseInt(data[1]); j++) { // second datapoint gives you how many connections
         String[] conData = sc.nextLine().split("\\s+"); // NOTE: conData[0] is empty
-        City a = cities[j]; // assume city connections and city list are in same order
+        City a = cities[i]; // assume city connections and city list are in same order
         City b = cities[indexOf(cityNames, conData[1])]; // get index of city name
         Connection cur = new Connection(conData[3], a, b, Integer.parseInt(conData[2]));
         a.addConnection(cur);
         // don't add cur to b's connections. That'll happen when b's connections get analyzed
+        // altho that ^ will result in lots of memory wasted for making new objects.
       }
     }
 
-
+    // Testing for now
     System.out.println(getBestRoute("Atlanta", "Philadelphia", cityNames, cities));
 
   }
@@ -127,10 +132,24 @@ public class PathFind {
    * @param cities
    * @return path
    */
-  public static String getBestRoute(String start, String end, String[] cityNames, City[] cities) {
+  public static String getBestRoute(String startName, String endName, String[] cityNames, City[] cities) {
+    City start = cities[indexOf(cityNames, startName)]; // get the referenced cities
+    City end = cities[indexOf(cityNames, endName)];
 
-    return "idk";
+    for (int i = 0; i < start.connections.size(); i++) {
+      Connection cur = start.connections.get(i);
+      cur.connects[1].cost = start.cost + cur.cost + cur.connects[1].distanceFrom(end);
+      // ^ cost of city = distance traveled previously + distance traveled now + estimated distance to end
+      System.out.println(cur.connects[1].toString());
+    }
+
+    // TODO: add priority queue, iterator, etc
+
+    return "\nidk";
   }
+
+
+
 
 
   /**
