@@ -112,6 +112,11 @@ public class PathFind {
 //    System.out.println(StringifyArray(cities[0].connections));
   }
 
+  /**
+   * Converts an array to an okay-looking string for debug
+   * @param arr
+   * @return fullString
+   */
   public static String StringifyArray(Object[] arr) {
     String returnable = "";
     for (Object i : arr) {
@@ -120,6 +125,12 @@ public class PathFind {
     return returnable;
   }
 
+  /**
+   * Looks for thing in the array, and returns it's index. Only tested on strings
+   * @param arr
+   * @param thing
+   * @return index
+   */
   public static int indexOf(Object[] arr, Object thing) {
     for (int i = 0; i < arr.length; i++) {
       if (arr[i].equals(thing)) return i;
