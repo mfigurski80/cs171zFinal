@@ -62,6 +62,10 @@ public class PathFind {
       connects[1] = b;
       cost = _cost;
     }
+
+    public String toString() {
+      return java.lang.String.format("%s, from %s to %s", name, connects[0].name, connects[1].name);
+    }
   }
 
   /**
@@ -107,10 +111,27 @@ public class PathFind {
         a.addConnection(cur);
         // don't add cur to b's connections. That'll happen when b's connections get analyzed
       }
+    }
+
+
+    System.out.println(getBestRoute("Atlanta", "Philadelphia", cityNames, cities));
+
   }
 
-//    System.out.println(StringifyArray(cities[0].connections));
+
+  /**
+   * Implementation of A* algorithm to find shortest route between given cities
+   * @param start
+   * @param end
+   * @param cityNames
+   * @param cities
+   * @return path
+   */
+  public static String getBestRoute(String start, String end, String[] cityNames, City[] cities) {
+
+    return "idk";
   }
+
 
   /**
    * Converts an array to an okay-looking string for debug
