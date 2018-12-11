@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 javac PathFind.java
 java PathFind MapData.txt
 
