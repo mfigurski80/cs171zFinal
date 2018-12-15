@@ -1,6 +1,8 @@
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.*;               // Not sure what I use for...
+import java.util.ArrayList;     // Stores connections for each city
+import java.util.Scanner;       // reads in file
+import java.util.PriorityQueue; // Stores each city in order priority (of least cost)
+import java.util.Comparator;    // enables us to compare cities by least cost
 
 public class PathFind {
 
@@ -11,9 +13,9 @@ public class PathFind {
    * @param position-x
    * @param position-y
    */
-  private static class City {
+  private static class City implements Comparable<City> {
     public boolean isOpen = true;
-    public String name = new String();
+    public String name;
     public double x,y;
     public double cost;
     public Connection parent;
@@ -42,9 +44,15 @@ public class PathFind {
       connections.add(con);
     }
 
+    // override Comparable method
+    public int compareTo(City other) {
+      return (int)(cost - other.cost);
+    }
+
     public String toString() {
       return java.lang.String.format("%s -- x:%s; y:%s; cost:%s", name, x, y, cost);
     }
+
   }
 
   /**
@@ -119,7 +127,7 @@ public class PathFind {
     }
 
     // Testing for now
-    System.out.println(getBestRoute("Atlanta", "Philadelphia", cityNames, cities));
+    System.out.println(getBestRoute("Philadelphia", "Atlanta", cityNames, cities));
 
   }
 
@@ -136,16 +144,42 @@ public class PathFind {
     City start = cities[indexOf(cityNames, startName)]; // get the referenced cities
     City end = cities[indexOf(cityNames, endName)];
 
-    for (int i = 0; i < start.connections.size(); i++) {
-      Connection cur = start.connections.get(i);
-      cur.connects[1].cost = start.cost + cur.cost + cur.connects[1].distanceFrom(end);
-      // ^ cost of city = distance traveled previously + distance traveled now + estimated distance to end
-      System.out.println(cur.connects[1].toString());
+    boolean isFound = false;
+    PriorityQueue<City> found = new PriorityQueue<City>();
+    found.add(end); // yes, I'm going from end to front (so it's easier to form string afterwards)
+
+
+    while (!isFound) {
+      City curCity = found.poll();
+      if (curCity.distanceFrom(start) == 0) {
+        isFound = true;
+      }
+      for (int i = 0; i < curCity.connections.size(); i++) {
+        Connection curCon = curCity.connections.get(i);
+        City target = curCon.connects[1];
+        double cost = curCity.cost + curCon.cost + target.distanceFrom(start);
+        if (target.isOpen || target.cost > cost) { // if new City, or found easier path...
+          target.cost = cost;
+          // ^ cost of city = distance traveled previously + distance traveled now + estimated distance to end
+          target.isOpen = false;
+          target.parent = curCon; // set how I got here
+          found.add(target); // analyze target's connections too!
+        }
+      }
+
     }
 
-    // TODO: add priority queue, iterator, etc
 
-    return "\nidk";
+    City curCity = start;
+    String path = "Route " + end.cost;
+    // develop path by going forwards (utilizing parent connection of each city)
+    while (curCity.distanceFrom(end) != 0) {
+      Connection con = curCity.parent;
+      path += "\n" + con.connects[1].name + " " + con.connects[0].name + " " + con.name;
+      curCity = con.connects[0];
+    }
+
+    return path;
   }
 
 
@@ -176,5 +210,9 @@ public class PathFind {
       if (arr[i].equals(thing)) return i;
     }
     return -1;
+  }
+
+  public static void print(Object printable) {
+    System.out.println(printable);
   }
 }
