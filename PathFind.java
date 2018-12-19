@@ -30,7 +30,7 @@ public class PathFind {
     public double distanceFrom(double targetX, double targetY) {
       double dX = x - targetX;
       double dY = y - targetY;
-      return 2*adjustMetersForCurvature(100*(Math.sqrt(dX*dX + dY*dY)));
+      return adjustMetersForCurvature(100*(Math.sqrt(dX*dX + dY*dY)));
     }
     public double distanceFrom(City target) {
       return (distanceFrom(target.x, target.y));
@@ -85,15 +85,9 @@ public class PathFind {
    * @param args
    */
   public static void main(String[] args) {
-    System.out.println("[Running...]");
+    // System.out.println("[Running...]");
 
-    Scanner sc;
-    try {
-      sc = new Scanner(new File(args[0]));
-    } catch(FileNotFoundException err) { // woot, file doesn't exist.
-      System.out.println("[Couldn't find " + args[0] + ". You got some serious problems rn]");
-      sc = new Scanner(System.in);
-    }
+    Scanner sc = new Scanner(System.in);
 
     int citiesCount = sc.nextInt(); // get amount of cities
     sc.nextLine(); // clear rest of that line (it's empty)
@@ -127,7 +121,7 @@ public class PathFind {
     }
 
     // Testing for now
-    System.out.println(getBestRoute("Philadelphia", "Atlanta", cityNames, cities));
+    System.out.println(getBestRoute(args[0], args[1], cityNames, cities));
 
   }
 
@@ -146,24 +140,28 @@ public class PathFind {
 
     boolean isFound = false;
     PriorityQueue<City> found = new PriorityQueue<City>();
-    found.add(end); // yes, I'm going from end to front (so it's easier to form string afterwards)
+    found.add(end); // I'm going from end to front (so it's easier to form string afterwards)
+    end.cost = 0;
 
 
     while (!isFound) {
       City curCity = found.poll();
+
       if (curCity.distanceFrom(start) == 0) {
         isFound = true;
       }
       for (int i = 0; i < curCity.connections.size(); i++) {
         Connection curCon = curCity.connections.get(i);
         City target = curCon.connects[1];
-        double cost = curCity.cost + curCon.cost + target.distanceFrom(start);
-        if (target.isOpen || target.cost > cost) { // if new City, or found easier path...
+        double cost = curCity.cost + curCon.cost;
+        // ^ true cost of city = distance traveled previously + distance traveled now
+        if (target.isOpen || (target.cost + target.distanceFrom(start)) > (cost + curCity.distanceFrom(start))) { // if new City, or found easier path...
           target.cost = cost;
-          // ^ cost of city = distance traveled previously + distance traveled now + estimated distance to end
           target.isOpen = false;
-          target.parent = curCon; // set how I got here
-          found.add(target); // analyze target's connections too!
+          target.parent = curCon; // set how I got here (becomes sort of like a linkedlist)
+          found.add(target); // analyze target's connections!
+          // System.out.println("\tProcessing " + (i+1) + ": " + target.name + " -- Cost: " + target.cost);
+          // System.out.println("\tChange in distance: " + (target.distanceFrom(start)-curCity.distanceFrom(start)));
         }
       }
 
@@ -171,14 +169,13 @@ public class PathFind {
 
 
     City curCity = start;
-    String path = "Route " + end.cost;
+    String path = "Path: " + (int)start.cost;
     // develop path by going forwards (utilizing parent connection of each city)
     while (curCity.distanceFrom(end) != 0) {
       Connection con = curCity.parent;
-      path += "\n" + con.connects[1].name + " " + con.connects[0].name + " " + con.name;
+      path += "\n" + con.connects[1].name + " " + con.connects[0].name + " " + con.name + " -- length: " + con.cost;
       curCity = con.connects[0];
     }
-
     return path;
   }
 
